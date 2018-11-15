@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DAILY REPORT GA</string>
+    <string name="login_desc">PT. Ultrajaya Milk Industry \n &amp; \n Trading Company, Tbk \n IT Department - 2018</string>
+    <string name="file_provider_authority" translatable="false">co.id.ultrajaya.fileprovider</string>
+</resources>

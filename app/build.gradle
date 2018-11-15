@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+//apply plugin: "org.jetbrains.kotlin.kapt"
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "id.co.ultrajaya.hrdinspection"
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation files('libs/ksoap2.jar')
+
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+
+    implementation 'com.github.florent37:materialtextfield:1.0.7'
+
+    //show progress dialog
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
+
+    //sendFTP
+    implementation files('libs/simpleftp.jar')
+    implementation files('libs/ftp4j-1.7.2.jar')
+
+    //editText
+    implementation 'com.github.HITGIF:TextFieldBoxes:1.4.4'
+
+    //datepicker
+    implementation('com.shagi:material-datepicker:1.3') {
+        exclude group: 'com.android.support'
+    }
+
+    //glide for url to image
+    implementation "com.github.bumptech.glide:glide:4.7.1"
+
+    //recyclerview and cardview
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
